@@ -23,7 +23,7 @@ export default class ListEditPlay {
   // проверка на наличие контейнера
   checkBinding() {
     if (this.container === null) {
-      throw new Error('GamePlay not bind to DOM');
+      throw new Error('ListEditPlay not bind to DOM');
     }
   }
 
