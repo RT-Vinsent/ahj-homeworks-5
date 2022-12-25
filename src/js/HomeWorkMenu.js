@@ -1,5 +1,7 @@
 import PopoversController from './taskOne/PopoversController';
 import PopoversPlay from './taskOne/PopoversPlay';
+import ListEditController from './taskTwo/ListEditControl';
+import ListEditPlay from './taskTwo/ListEditPlay';
 
 export default class HomeWorkMenu {
   constructor() {
@@ -82,7 +84,7 @@ export default class HomeWorkMenu {
 
     this.taskRemover(); // удаление задач
 
-    // if (!this.taskTwoInited) { this.taskTwoInit(); } // инициализация Задачи № 2
+    if (!this.taskTwoInited) { this.taskTwoInit(); } // инициализация Задачи № 2
 
     this.taskOneInited = false; // состояние задачи № 1
     this.taskTwoInited = !this.taskTwoInited; // состояние задачи № 2
@@ -105,7 +107,7 @@ export default class HomeWorkMenu {
   // удаляет все запущенные задачи
   taskRemover() {
     if (this.taskOneInited) { this.taskOneRemove(); } // удаление Задачи № 1
-    // if (this.taskTwoInited) { this.taskTwoRemove(); } // удаление Задачи № 2
+    if (this.taskTwoInited) { this.taskTwoRemove(); } // удаление Задачи № 2
     // if (this.taskThreeInited) { this.taskThreeRemove(); } // удаление Задачи № 3
   }
 
@@ -119,15 +121,15 @@ export default class HomeWorkMenu {
     this.popoversController.init(); // инициализируем класс логики
   }
 
-  // // создание Задачи № 2
-  // taskTwoInit() {
-  //   this.topTasksPlay = new TopTasksPlay(); // создаём класс управления DOM
-  //   this.topTasksPlay.bindToDOM(this.containerTaskTwo); // присваеваем ему div taskTwo из DOM
-  //   this.topTasksPlay.drawUI(); // отрисовываем HTML в DOM
+  // создание Задачи № 2
+  taskTwoInit() {
+    this.listEditPlay = new ListEditPlay(); // создаём класс управления DOM
+    this.listEditPlay.bindToDOM(this.containerTaskTwo); // присваеваем ему div taskTwo из DOM
+    this.listEditPlay.drawUI(); // отрисовываем HTML в DOM
 
-  //   this.topTasksControl = new TopTasksControl(this.topTasksPlay); // создаём класс логики
-  //   this.topTasksControl.init(); // инициализируем класс логики
-  // }
+    this.listEditController = new ListEditController(this.listEditPlay); // создаём класс логики
+    this.listEditController.init(); // инициализируем класс логики
+  }
 
   // // создание Задачи № 3
   // taskThreeInit() {
@@ -146,12 +148,12 @@ export default class HomeWorkMenu {
     this.popoversController = '';
   }
 
-  // // удаление Задачи № 2
-  // taskTwoRemove() {
-  //   this.topTasksControl.topTasksPlay.clearHTML();
-  //   this.topTasksPlay = '';
-  //   this.topTasksControl = '';
-  // }
+  // удаление Задачи № 2
+  taskTwoRemove() {
+    this.listEditController.listEditPlay.clearHTML();
+    this.listEditPlay = '';
+    this.listEditController = '';
+  }
 
   // // удаление Задачи № 3
   // taskThreeRemove() {
