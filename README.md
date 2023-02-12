@@ -4,11 +4,7 @@
 
 [![Build status](https://ci.appveyor.com/api/projects/status/dw9n2uptt3h0yffn?svg=true)](https://ci.appveyor.com/project/RT-Vinsent/ahj-homeworks-5)
 
-![CI](https://github.com/RT-Vinsent/ahj-homeworks-5/actions/workflows/web.yml/badge.svg)
-
-![example workflow](https://github.com/RT-Vinsent/ahj-homeworks-5/actions/workflows/ci_test.yml/badge.svg)
-
-![example workflow](https://github.com/RT-Vinsent/ahj-homeworks-5/actions/workflows/deploy.yml/badge.svg)
+[![pages-build-deployment](https://github.com/RT-Vinsent/ahj-homeworks-5/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/RT-Vinsent/ahj-homeworks-5/actions/workflows/pages/pages-build-deployment)
 
 # Домашнее задание к занятию "Работа с HTML-формами"
 
