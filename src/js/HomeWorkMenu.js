@@ -2,6 +2,8 @@ import PopoversController from './taskOne/PopoversController';
 import PopoversPlay from './taskOne/PopoversPlay';
 import ListEditController from './taskTwo/ListEditControl';
 import ListEditPlay from './taskTwo/ListEditPlay';
+import TripCalendarPlay from './taskThree/TripCalendarPlay';
+import TripCalendarController from './taskThree/TripCalendarController';
 
 export default class HomeWorkMenu {
   constructor() {
@@ -97,7 +99,7 @@ export default class HomeWorkMenu {
 
     this.taskRemover(); // удаление задач
 
-    // if (!this.taskThreeInited) { this.taskThreeInit(); } // инициализация Задачи № 3
+    if (!this.taskThreeInited) { this.taskThreeInit(); } // инициализация Задачи № 3
 
     this.taskOneInited = false; // состояние задачи № 1
     this.taskTwoInited = false; // состояние задачи № 2
@@ -108,7 +110,7 @@ export default class HomeWorkMenu {
   taskRemover() {
     if (this.taskOneInited) { this.taskOneRemove(); } // удаление Задачи № 1
     if (this.taskTwoInited) { this.taskTwoRemove(); } // удаление Задачи № 2
-    // if (this.taskThreeInited) { this.taskThreeRemove(); } // удаление Задачи № 3
+    if (this.taskThreeInited) { this.taskThreeRemove(); } // удаление Задачи № 3
   }
 
   // создание Задачи № 1
@@ -131,15 +133,15 @@ export default class HomeWorkMenu {
     this.listEditController.init(); // инициализируем класс логики
   }
 
-  // // создание Задачи № 3
-  // taskThreeInit() {
-  //   this.galleryPlay = new GalleryPlay(); // создаём класс управления DOM
-  //   this.galleryPlay.bindToDOM(this.containerTaskThree); // присваеваем ему div taskThree из DOM
-  //   this.galleryPlay.drawUI(); // отрисовываем HTML в DOM
+  // создание Задачи № 3
+  taskThreeInit() {
+    this.tripCalendarPlay = new TripCalendarPlay(); // создаём класс управления DOM
+    this.tripCalendarPlay.bindToDOM(this.containerTaskThree); // присваеваем div taskThree из DOM
+    this.tripCalendarPlay.drawUI(); // отрисовываем HTML в DOM
 
-  //   this.galleryControl = new GalleryControl(this.galleryPlay); // создаём класс логики
-  //   this.galleryControl.init(); // инициализируем класс логики
-  // }
+    this.tripCalendarController = new TripCalendarController(this.tripCalendarPlay); // класс логики
+    this.tripCalendarController.init(); // инициализируем класс логики
+  }
 
   // удаление Задачи № 1
   taskOneRemove() {
@@ -155,10 +157,10 @@ export default class HomeWorkMenu {
     this.listEditController = '';
   }
 
-  // // удаление Задачи № 3
-  // taskThreeRemove() {
-  //   this.galleryControl.galleryPlay.clearHTML();
-  //   this.galleryPlay = '';
-  //   this.galleryControl = '';
-  // }
+  // удаление Задачи № 3
+  taskThreeRemove() {
+    this.tripCalendarController.tripCalendarPlay.clearHTML();
+    this.tripCalendarPlay = '';
+    this.tripCalendarController = '';
+  }
 }

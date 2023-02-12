@@ -50,7 +50,7 @@ body {
   flex-wrap: nowrap;
   flex-direction: column;
   align-items: center;
-  min-width: 240px;
+  min-width: 320px;
   max-width: 95%;
   /* width: 500px; */
   border: 1px solid #0c1e3b;
@@ -389,4 +389,218 @@ H2 {
 
 .error-add {
   animation: glow 500ms ease-out infinite alternate;
+}
+
+.calendar-container {
+  box-sizing: border-box;
+  position: relative;
+  width: 90%;
+  max-width: 400px;
+  margin: 10px 10px 20px;
+  padding: 15px;
+  background-image: 
+    linear-gradient(
+    rgba(0, 0, 0, 0.4), 
+    rgba(0, 0, 0, 0.5)
+    ), 
+    url(../img/airport.jpg);
+  background-position: center;
+  background-size: cover;
+  background-color: #919191;
+  border-radius: 6px;
+  color: #ffffff;
+}
+
+.calendar-title p {
+  font-size: 22px;
+}
+
+.calendar-block {
+  display: flex;
+  position: relative;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.calendar-label-text {
+  box-sizing: border-box;
+  width: 100%;
+  margin-bottom: 5px;
+  display: flex;
+}
+
+.calendar-label-input {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 9px;
+  display: flex;
+  border: 1px solid #697278;
+  border-radius: 3px;
+}
+
+.calendar-block:nth-of-type(2) .calendar-label-input  {
+  width: 80%;
+}
+
+.calendar-swap {
+  display: flex;
+  box-sizing: border-box;
+
+  width: 35px;
+  height: 35px;
+  margin: auto;
+  background-size: cover;
+  background-image: url(../img/circular-refresh-arrows.png);
+}
+
+.calendar-block-small {
+  position: relative;
+  box-sizing: border-box;
+  width: 48%;
+  margin-top: 10px;
+}
+
+.calendar-minus {
+  position: absolute;
+  top: 35px;
+  left: 16px;
+  height: 17px;
+  width: 17px;
+  border: 1px solid #24bd24;
+  border-radius: 15%;
+}
+
+.calendar-minus::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 11px;
+  height: 1px;
+  background-color: #24bd24;
+}
+
+.calendar-plus {
+  position: absolute;
+  top: 35px;
+  right: 16px;
+  height: 17px;
+  width: 17px;
+  border: 1px solid #df2222;
+  border-radius: 15%;
+}
+
+.calendar-plus::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 11px;
+  height: 1px;
+  background-color: #df2222;
+}
+
+.calendar-plus::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 1px;
+  height: 11px;
+  background-color: #df2222;
+}
+
+.calendar-block-small .calendar-label-input {
+  padding-left: 50px;
+  padding-right: 50px;
+  text-align: center;
+}
+
+.calendar-block-small:nth-of-type(4) {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.calendar-btn {
+  width: 100%;
+  margin: 15px auto 0px;
+  padding: 8px;
+  font-size: 120%;
+  border-radius: 5px;
+  background-color: #ff0000;
+}
+
+.calendar-btn:hover {
+  background-color: #ce0202;
+}
+
+.calendar-label-checkbox {
+  width: 33px;
+  height: 33px;
+}
+
+.calendar-block-date {
+  width: 50%;
+}
+
+.calendar-block-date .calendar-label-input {
+  cursor: pointer;
+}
+
+/* .calendar-block-date:nth-of-type(1) {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: 2;
+} */
+
+.calendar-date-to {
+  width: 100%;
+}
+
+.calendar-date-to .calendar-label-input {
+  width: 100%;
+  outline: none;
+  border: none;
+  /* border: 1px solid #ff0000;
+  border-right: none; */
+}
+
+.calendar-date-from {
+  display: none;
+  width: 50%;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  z-index: 2;
+}
+
+.calendar-date-from .calendar-label-input {
+  width: 100%;
+  outline: none;
+  border-left: 1px solid white;
+  border: none;
+}
+
+.calendar-date-from-active {
+  display: block;
+}
+
+.calendar-date-to-active {
+  width: 50%;
+}
+
+.calendar-date-from-active .calendar-label-input {
+  border-left: none;
+  border-radius: 0 3px 3px 0;
+}
+
+.calendar-date-to-active .calendar-label-input {
+  border-right: none;
+  border-radius: 3px 0px 0px 3px;
 }

@@ -44,13 +44,14 @@
     "identity-obj-proxy": "^3.0.0",
     "jest": "^28.0.3",
     "jest-environment-jsdom": "^29.3.1",
-    "live-server": "^1.2.2",
+    "live-server": "^1.1.0",
     "mini-css-extract-plugin": "^2.6.0",
-    "puppeteer": "^19.3.0",
+    "moment": "^2.29.4",
+    "puppeteer": "^19.6.3",
     "terser-webpack-plugin": "^5.3.1",
-    "webpack": "^5.72.0",
+    "webpack": "^5.75.0",
     "webpack-cli": "^4.9.2",
-    "webpack-dev-server": "^4.9.0",
+    "webpack-dev-server": "^4.11.1",
     "webpack-merge": "^5.8.0"
   },
   "dependencies": {

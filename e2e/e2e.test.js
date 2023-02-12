@@ -16,7 +16,7 @@ describe('p2p test', () => {
 
     browser = await puppeteer.launch({
       headless: false, // show gui
-      slowMo: 150, // скорость
+      slowMo: 100, // скорость
       devtools: false, // show devTools
       args: ['--window-size=640,1080'],
       defaultViewport: {
@@ -39,12 +39,17 @@ describe('p2p test', () => {
 
     await taskOne.click();
 
+    await page.waitForSelector('.has-tooltip')
+      .then(() => console.log('has-tooltip true'))
+      .catch(() => console.log('has-tooltip error'));
+
     const hasTooltip = await page.$$('.has-tooltip');
 
     for (let i = 0; i < hasTooltip.length; i += 1) {
       await hasTooltip[i].click();
       await hasTooltip[i].waitForSelector('.tooltip_active')
-        .then(() => console.log('got it'));
+        .then(() => console.log('true'))
+        .catch(() => console.log('error'));
     }
   });
 
@@ -105,5 +110,41 @@ describe('p2p test', () => {
     const arrProductLength = arrProduct.length;
 
     expect(arrProductLength).toEqual(2);
+  });
+
+  test('test taskThree checkbox', async () => {
+    await page.goto(baseUrl); // переход на страницу
+
+    const taskThree = await page.$('[data-id=taskThree]');
+    await taskThree.click();
+
+    const checkbox = await page.$('.calendar-label-checkbox');
+    await checkbox.click();
+
+    await page.$('.calendar-date-to-active')
+      .then(() => console.log('true'))
+      .catch(() => console.log('error'));
+    await page.$('.calendar-date-from-active')
+      .then(() => console.log('true'))
+      .catch(() => console.log('error'));
+  });
+
+  test('test taskThree date to and from', async () => {
+    await page.goto(baseUrl); // переход на страницу
+    const expected = '2023-11-22';
+
+    const taskThree = await page.$('[data-id=taskThree]');
+    await taskThree.click();
+
+    const checkbox = await page.$('.calendar-label-checkbox');
+    await checkbox.click();
+
+    const dataOne = await page.$('[data-id=calendar-input-date-to]');
+    await dataOne.type('22112023');
+
+    const dataTwo = await page.$('[data-id=calendar-input-date-from]');
+    const received = await page.evaluate((el) => el.value, dataTwo);
+
+    expect(received).toEqual(expected);
   });
 });
