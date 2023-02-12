@@ -1,5 +1,3 @@
-// @license icon from indicons.com
-
 export default class Popovers {
   constructor(popoversPlay) {
     this.popoversPlay = popoversPlay;
