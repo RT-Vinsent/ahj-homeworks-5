@@ -2,6 +2,14 @@
 
 ## Ссылкка на [github-pages](https://rt-vinsent.github.io/ahj-homeworks-5/)
 
+[![Build status](https://ci.appveyor.com/api/projects/status/dw9n2uptt3h0yffn?svg=true)](https://ci.appveyor.com/project/RT-Vinsent/ahj-homeworks-5)
+
+![CI](https://github.com/RT-Vinsent/ahj-homeworks-5/actions/workflows/web.yml/badge.svg)
+
+![example workflow](https://github.com/RT-Vinsent/ahj-homeworks-5/actions/workflows/ci_test.yml/badge.svg)
+
+![example workflow](https://github.com/RT-Vinsent/ahj-homeworks-5/actions/workflows/deploy.yml/badge.svg)
+
 # Домашнее задание к занятию "Работа с HTML-формами"
 
 Правила сдачи задания:
@@ -22,7 +30,7 @@
 
 Вот так должен выглядеть виджет в целом, для упрощения будем считать, что виджет всегда должен показываться сверху.
 
-![](./pic/Popovers.png)
+![](https://github.com/RT-Vinsent/ahj-homeworks/raw/video/forms/pic/Popovers.png)
 
 
 У popover'а обязательно должно быть название и текст. Центрироваться он обязательно должен по горизонтали относительно элемента, который вызвал popover'а.
@@ -40,7 +48,7 @@
 #### Легенда
 
 Вы делаете CRM-систему, где в списке представлены товары, выглядеть это должно примерно так, как на скетче:
-![](./pic/list.png)
+![](https://github.com/RT-Vinsent/ahj-homeworks/raw/video/forms/pic/list.png)
 
 #### Описание
 
@@ -48,7 +56,7 @@
 
 При нажатии на кнопку редактирования или добавления должно открываться всплывающее окно:
 
-![](./pic/list-2.png)
+![](https://github.com/RT-Vinsent/ahj-homeworks/raw/video/forms/pic/list-2.png)
 
 Обратите внимание, если вы нажимаете на кнопку "+" (добавить), то окно пустое, если вы нажимаете "✎" (редактировать), то поля заполнены.
 
@@ -76,9 +84,9 @@
 
 Аналог вы можете посмотреть на сайте РЖД и любых авиакомпаний:
 
-![](./pic/trip.png)
+![](https://github.com/RT-Vinsent/ahj-homeworks/raw/video/forms/pic/trip.png)
 
-![](./pic/trip-2.png)
+![](https://github.com/RT-Vinsent/ahj-homeworks/raw/video/forms/pic/trip-2.png)
 
 #### Описание
 
