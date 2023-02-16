@@ -5,12 +5,12 @@ export default class Popovers {
 
   init() {
     this.popoversPlay.addClickListeners(this.onClick.bind(this));
-
     this.popoversPlay.drawUI();
-    this.popoversPlay.addTooltips();
   }
 
-  onClick(value) {
-    this.popoversPlay.tooltipActive(value);
+  onClick(textEL) {
+    this.popoversPlay.delTooltip(); // удаляет старую подсказку
+    this.popoversPlay.addTooltip(textEL); // добавляет новую подсказку
+    this.popoversPlay.positioning(); // позиционирует подсказку
   }
 }

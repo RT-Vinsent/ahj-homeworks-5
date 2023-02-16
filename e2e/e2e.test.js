@@ -47,7 +47,7 @@ describe('p2p test', () => {
 
     for (let i = 0; i < hasTooltip.length; i += 1) {
       await hasTooltip[i].click();
-      await hasTooltip[i].waitForSelector('.tooltip_active')
+      await hasTooltip[i].waitForSelector('.tooltip')
         .then(() => console.log('true'))
         .catch(() => console.log('error'));
     }

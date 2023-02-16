@@ -3,6 +3,8 @@ export default class PopoversPlay {
   constructor() {
     this.container = null; // for container
     this.clickListeners = [];
+    this.toltipEl = false;
+    this.tooltip = false;
   }
 
   // binding container to class
@@ -114,15 +116,16 @@ export default class PopoversPlay {
 
     this.container.classList.add('task');
 
-    // DOM elements
+    // находим все элементы ссылок на подсказки
     this.hasTooltips = this.container.querySelectorAll('.has-tooltip');
 
-    // DOM events
+    // вешаем обработчик событий на каждую ссылку подсказки
     for (let i = 0; i < this.hasTooltips.length; i += 1) {
       this.hasTooltips[i].addEventListener('click', (event) => this.onClick(event));
     }
 
-    window.addEventListener('scroll', () => this.position());
+    // событие для позиционирования подсказки при зменении ширины экрана
+    window.addEventListener('resize', () => this.positioning());
   }
 
   // Add listener to click
@@ -130,116 +133,83 @@ export default class PopoversPlay {
     this.clickListeners.push(callback);
   }
 
-  onClick(event) {
+  onClick(event) { // метод клика на ссылку подсказки
     event.preventDefault();
-    this.position();
 
-    // const { title } = event.target;
-    this.clickListeners.forEach((o) => o.call(null, event.target));
+    this.toltipEl = event.target; // элемент по которому кликнули
+    const textEL = this.toltipEl.title; // текст для подсказки из атрибута title
+
+    this.clickListeners.forEach((o) => o.call(null, textEL));
   }
 
-  addTooltips() { // метод добавления подсказки в ссылку
-    for (let i = 0; i < this.hasTooltips.length; i += 1) {
-      const tooltip = document.createElement('div');
-      const tooltipHeading = `
-        <p>Popover Title</p>
-      `;
-      const tooltipText = `
-        <p>${this.hasTooltips[i].title}</p>
-      `;
+  addTooltip(textEL) { // метод добавляет подсказку
+    this.tooltip = document.createElement('div');
+    const tooltipHeading = document.createElement('p');
+    const tooltipText = document.createElement('p');
 
-      tooltip.classList.add('tooltip');
-      tooltip.innerHTML = tooltipText;
-      this.hasTooltips[i].appendChild(tooltip);
-      tooltip.insertAdjacentHTML('afterBegin', tooltipHeading);
+    tooltipHeading.textContent = 'Popover Title';
+    tooltipText.textContent = textEL;
+
+    this.tooltip.appendChild(tooltipHeading);
+    this.tooltip.appendChild(tooltipText);
+    this.toltipEl.appendChild(this.tooltip);
+    this.tooltip.classList.add('tooltip');
+  }
+
+  delTooltip() { // удаляет подсказку
+    if (this.tooltip) {
+      this.tooltip.remove();
     }
   }
 
-  position() { // позиционирование подсказки
-    for (let i = 0; i < this.hasTooltips.length; i += 1) {
-      const tooltip = this.hasTooltips[i].querySelector('.tooltip');
+  positioning() {
+    if (!this.toltipEl) { return; }
+    const screenW = window.innerWidth;
+    const screenH = window.innerHeight;
 
-      const screenWidth = window.innerWidth;
-      const screenHeight = window.innerHeight;
+    const tooltipH = this.tooltip.getBoundingClientRect().height; // находим высоту подсказки
+    const tooltipW = this.tooltip.getBoundingClientRect().width; // находим ширину подсказки
 
-      let tooltipHeight = 0; // высота подсказки
-      let tooltipWidth = 0; // ширина подсказки
+    const heightPage = window.pageYOffset; // растояние от начала страницы
 
-      if (tooltip.classList.contains('tooltip_active')) {
-        tooltipHeight = tooltip.getBoundingClientRect().height; // находим высоту подсказки
-        tooltipWidth = tooltip.getBoundingClientRect().width; // находим ширину подсказки
-      }
+    const {
+      top,
+      left,
+      right,
+      bottom,
+      height,
+      width,
+    } = this.toltipEl.getBoundingClientRect(); // координаты ссылки на подсказку
 
-      if (!tooltip.classList.contains('tooltip_active')) {
-        tooltip.classList.add('tooltip_active');
-        tooltipHeight = tooltip.getBoundingClientRect().height; // находим высоту подсказки
-        tooltipWidth = tooltip.getBoundingClientRect().width; // находим ширину подсказки
-        tooltip.classList.remove('tooltip_active');
-      }
+    // console.log(`top ${top}`);
+    // console.log(`left ${left}`);
+    // console.log(`right ${right}`);
+    // console.log(`bottom ${bottom}`);
+    // console.log(`height ${height}`);
+    // console.log(`width ${width}`);
 
-      const {
-        top,
-        left,
-        right,
-        bottom,
-        height,
-        width,
-      } = this.hasTooltips[i].getBoundingClientRect();
+    // console.log(`screenWidth ${screenW}`);
+    // console.log(`screenHeight ${screenH}`);
+    // console.log(`heightPage ${heightPage}`);
 
-      // if (i === 1) {
-      //   console.log(`top ${top}`);
-      //   console.log(`left ${left}`);
-      //   console.log(`right ${right}`);
-      //   console.log(`bottom ${bottom}`);
-      //   console.log(`height ${height}`);
-
-      //   console.log(`screenWidth ${screenWidth}`);
-      //   console.log(`screenHeight ${screenHeight}`);
-
-      //   console.log(`tooltipHeight ${tooltipHeight}`);
-      //   console.log(`tooltipWidth ${tooltipWidth}`);
-      // }
-
-      // задаём через style позиционирование по условию
-      if (screenWidth - (right + tooltipWidth) >= 0) {
-        // справа
-        tooltip.dataset.position = 'right';
-        tooltip.style = `left: ${right}px; top: ${top - ((tooltipHeight - height) / 2)}px`;
-      // eslint-disable-next-line max-len
-      } else if (screenHeight - (bottom + tooltipHeight) >= 0 && tooltipWidth <= screenWidth && (screenWidth - left) >= tooltipWidth) {
-        // снизу
-        tooltip.dataset.position = 'bottom';
-        tooltip.style = `left: ${(left + width / 2) - tooltipWidth / 2}px; top: ${bottom}px`;
-      } else if (left - tooltipWidth >= 0) {
-        // слева
-        tooltip.dataset.position = 'left';
-        tooltip.style = `left: ${left - tooltipWidth}px; top: ${top - ((tooltipHeight - height) / 2)}px`;
-      } else if (top - tooltipHeight >= 0) {
-        // сверху
-        tooltip.dataset.position = 'top';
-        tooltip.style = `left: ${(left + width / 2) - tooltipWidth / 2}px; top: ${top - tooltipHeight}px`;
-      }
-    }
-  }
-
-  // delTooltip() {
-  //   for (let i = 0; i < this.tooltips.length; i += 1) {
-  //     const divTooltips = this.tooltips[i].querySelector('.tooltip');
-
-  //     if (divTooltips) {
-  //       this.tooltips[i].removeChild(divTooltips);
-  //     }
-  //   }
-  // }
-
-  tooltipActive(hasTooltip) {
-    const tooltip = hasTooltip.querySelector('.tooltip'); // находим подсказку у ссылки
-
-    if (tooltip.classList.contains('tooltip_active')) { // если подсказка активна
-      this.hasTooltips.forEach((element) => element.querySelector('div.tooltip').classList.remove('tooltip_active'));
-    } else {
-      this.hasTooltips.forEach((element) => element.querySelector('div.tooltip').classList.remove('tooltip_active'));
-      tooltip.classList.add('tooltip_active'); // включает подсказку
+    // задаём через style позиционирование по условию
+    if (screenW - (right + tooltipW) >= 0) {
+      // справа
+      this.tooltip.dataset.position = 'right';
+      this.tooltip.style = `left: ${right}px; top: ${top + heightPage - ((tooltipH - height) / 2)}px`;
+    // eslint-disable-next-line max-len
+    } else if (screenH - (bottom + tooltipH) >= 0 && tooltipW <= screenW && (screenW - left) >= tooltipW) {
+      // снизу
+      this.tooltip.dataset.position = 'bottom';
+      this.tooltip.style = `left: ${(left + width / 2) - tooltipW / 2}px; top: ${heightPage + bottom}px`;
+    } else if (left - tooltipW >= 0) {
+      // слева
+      this.tooltip.dataset.position = 'left';
+      this.tooltip.style = `left: ${left - tooltipW}px; top: ${top + heightPage - ((tooltipH - height) / 2)}px`;
+    } else if (top - tooltipH >= 0) {
+      // сверху
+      this.tooltip.dataset.position = 'top';
+      this.tooltip.style = `left: ${(left + width / 2) - tooltipW / 2}px; top: ${top + heightPage - tooltipH}px`;
     }
   }
 

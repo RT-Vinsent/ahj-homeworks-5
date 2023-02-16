@@ -10,13 +10,9 @@
   padding: 0;
 }
 
-/* body {
-  color: #999;
-  margin: 10px;
-} */
-
 body {
   display: flex;
+  position: relative;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -103,18 +99,13 @@ H2 {
 }
 
 .tooltip {
-  display: none;
-  position: fixed;
+  display: block;
+  position: absolute;
   min-width: 180px;
   background-color: #949494;
   border: 1px solid #999;
   border-radius: 10px;
   color: #000000;
-  /* margin: 10px; */
-}
-  
-.tooltip_active {
-  display: block;
 }
 
 .tooltip > p {
