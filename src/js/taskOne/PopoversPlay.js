@@ -136,10 +136,27 @@ export default class PopoversPlay {
   onClick(event) { // метод клика на ссылку подсказки
     event.preventDefault();
 
+    // если клик происходит повторно, то удаляет подсказку
+    const condition = this.checkTooltip(event.target);
+    if (condition) { return; }
+
     this.toltipEl = event.target; // элемент по которому кликнули
     const textEL = this.toltipEl.title; // текст для подсказки из атрибута title
 
     this.clickListeners.forEach((o) => o.call(null, textEL));
+  }
+
+  checkTooltip(target) { // проверка клика на туже самую подсказку
+    if (this.toltipEl === target) {
+      this.tooltip.remove();
+
+      this.toltipEl = false;
+      this.tooltip = false;
+
+      return true;
+    }
+
+    return false;
   }
 
   addTooltip(textEL) { // метод добавляет подсказку
