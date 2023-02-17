@@ -32,85 +32,81 @@ export default class PopoversPlay {
       </H2>
       <div class="container">
 
-        <div><a href="" class="has-tooltip" title="Устройтесь на работу!">Деньги!</a>
+        <p><a href="" class="has-tooltip" title="Устройтесь на работу!">Деньги!</a></p>
 
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi facere dolor dicta accusamus corporis itaque 
-        quam deleniti, earum similique alias nostrum corrupti aspernatur, beatae, veniam vel quidem tenetur, odit reiciendis.</div>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi facere dolor dicta accusamus corporis itaque 
+        quam deleniti, earum similique alias nostrum corrupti aspernatur, beatae, veniam vel quidem tenetur, odit reiciendis.</p>
         
-        <div>Laboriosam aliquid neque in itaque at eaque, similique nisi consequatur voluptatem nam blanditiis eum ab, pariatur, 
-        harum molestias quas veniam. Aliquam maxime ipsa neque earum accusantium suscipit quasi. Harum, atque.</div>
+        <p>Laboriosam aliquid neque in itaque at eaque, similique nisi consequatur voluptatem nam blanditiis eum ab, pariatur, 
+        harum molestias quas veniam. Aliquam maxime ipsa neque earum accusantium suscipit quasi. Harum, atque.</p>
 
-        <div>Commodi fugiat vitae facere, provident voluptatem architecto reprehenderit. Nemo natus, qui quia animi voluptatibus. 
-        Cupiditate dolores, ducimus, nihil adipisci nemo dolorum aliquam eveniet obcaecati aperiam quis eum corporis velit! Esse.</div>
+        <p>Commodi fugiat vitae facere, provident voluptatem architecto reprehenderit. Nemo natus, qui quia animi voluptatibus. 
+        Cupiditate dolores, ducimus, nihil adipisci nemo dolorum aliquam eveniet obcaecati aperiam quis eum corporis velit! Esse.</p>
 
-        <div>Earum deleniti laborum sunt ea, inventore voluptatum. Excepturi maiores laboriosam fugit, inventore hic quae ipsum, 
-        sequi ipsam expedita quisquam provident velit dolorum natus atque qui dignissimos numquam, quam, debitis! Error!</div>
+        <p>Earum deleniti laborum sunt ea, inventore voluptatum. Excepturi maiores laboriosam fugit, inventore hic quae ipsum, 
+        sequi ipsam expedita quisquam provident velit dolorum natus atque qui dignissimos numquam, quam, debitis! Error!</p>
 
-        <div>Autem iure cum, accusantium soluta dolor beatae voluptas, ipsa ad quas dignissimos. Laboriosam laborum praesentium 
-        necessitatibus cumque tempore animi similique corporis quas, ipsam suscipit id possimus deserunt vitae incidunt eos.</div>
+        <p>Autem iure cum, accusantium soluta dolor beatae voluptas, ipsa ad quas dignissimos. Laboriosam laborum praesentium 
+        necessitatibus cumque tempore animi similique corporis quas, ipsam suscipit id possimus deserunt vitae incidunt eos.</p>
 
-        <div>Autem, temporibus, nihil. Debitis quasi ex minus, delectus doloremque officiis sint facere, ducimus impedit! Sit, minima, 
-        et modi reiciendis sequi quo, voluptas dignissimos fugit veritatis quis nobis dolor saepe. Nobis!
+        <p>Autem, temporibus, nihil. Debitis quasi ex minus, delectus doloremque officiis sint facere, ducimus impedit! Sit, minima, 
+        et modi reiciendis sequi quo, voluptas dignissimos fugit veritatis quis nobis dolor saepe. Nobis!</p>
         
-        <a href="" class="has-tooltip" title="Это просто подсказка!">Подсказка</a></div>
+        <p><a href="" class="has-tooltip" title="Это просто подсказка!">Подсказка</a></p>
 
-        <div>Itaque eum maxime tempora soluta, impedit placeat, dolores quod esse quibusdam saepe consequatur pariatur maiores? 
-        Ex minima delectus unde sit repudiandae quidem maxime non velit aliquam temporibus nulla, magnam, laboriosam!</div>
+        <p>Itaque eum maxime tempora soluta, impedit placeat, dolores quod esse quibusdam saepe consequatur pariatur maiores? 
+        Ex minima delectus unde sit repudiandae quidem maxime non velit aliquam temporibus nulla, magnam, laboriosam!</p>
 
-        <div>Eum maiores doloribus, unde vel, doloremque, perferendis amet perspiciatis et distinctio natus veniam tempora magni 
-        possimus. Eius repellat molestiae nihil deserunt accusantium provident soluta eligendi, sequi possimus suscipit, laudantium, rem!</div>
+        <p>Eum maiores doloribus, unde vel, doloremque, perferendis amet perspiciatis et distinctio natus veniam tempora magni 
+        possimus. Eius repellat molestiae nihil deserunt accusantium provident soluta eligendi, sequi possimus suscipit, laudantium, rem!</p>
 
-        <div>Odit voluptas quisquam minus id magni, temporibus cupiditate rem aspernatur nihil ipsam? Minima, tempora perspiciatis doloribus 
-        ut nulla. Magni tempore repellendus voluptatem nisi esse minima ipsam, saepe facere et qui?</div>
+        <p>Odit voluptas quisquam minus id magni, temporibus cupiditate rem aspernatur nihil ipsam? Minima, tempora perspiciatis doloribus 
+        ut nulla. Magni tempore repellendus voluptatem nisi esse minima ipsam, saepe facere et qui?</p>
 
-        <div>Esse molestiae dolore hic sunt asperiores vitae odio ab voluptatum provident corporis, voluptates ducimus reiciendis inventore, 
-        placeat quasi minima dicta nemo voluptas voluptate unde, culpa illum? Modi qui, officia nobis.</div>
+        <p>Esse molestiae dolore hic sunt asperiores vitae odio ab voluptatum provident corporis, voluptates ducimus reiciendis inventore, 
+        placeat quasi minima dicta nemo voluptas voluptate unde, culpa illum? Modi qui, officia nobis.</p>
 
-        <div>Enim blanditiis nesciunt, repudiandae, ipsa accusantium  quos vitae magnam modi? Quia eaque natus officiis excepturi adipisci 
-        
-        <a href="" class="has-tooltip" title="Не важный текст подсказки">Важно</a> 
+        <p>Enim blanditiis nesciunt, repudiandae, ipsa accusantium  quos vitae magnam modi? Quia eaque natus officiis excepturi adipisci 
+        optio voluptate quis ut praesentium vero. Adipisci pariatur molestias harum ullam, incidunt blanditiis officia!</p>
 
-        optio voluptate quis ut praesentium vero. Adipisci pariatur molestias harum ullam, incidunt blanditiis officia!</div>
+        <p><a href="" class="has-tooltip" title="Не важный текст подсказки">Важно</a> </p>
 
-        <div>Beatae aspernatur eveniet doloribus ullam magnam, reprehenderit odio eius, laboriosam voluptatum cupiditate voluptate officiis 
-        fuga neque, inventore magni, labore assumenda porro dolores quidem. Accusantium temporibus consectetur architecto ab, a suscipit?</div>
+        <p>Beatae aspernatur eveniet doloribus ullam magnam, reprehenderit odio eius, laboriosam voluptatum cupiditate voluptate officiis 
+        fuga neque, inventore magni, labore assumenda porro dolores quidem. Accusantium temporibus consectetur architecto ab, a suscipit?</p>
 
-        <div>Sit dicta eos magni vel quae est debitis ipsam eligendi veniam totam et perspiciatis reprehenderit itaque excepturi omnis autem 
-        nihil explicabo sequi ut optio, officia voluptates sed? Ipsam, rerum maiores.</div>
+        <p>Sit dicta eos magni vel quae est debitis ipsam eligendi veniam totam et perspiciatis reprehenderit itaque excepturi omnis autem 
+        nihil explicabo sequi ut optio, officia voluptates sed? Ipsam, rerum maiores.</p>
 
-        <div>Doloremque fugiat nemo ea, id praesentium illum ab soluta cumque labore nam. Itaque reprehenderit vitae aliquid debitis rerum 
-        temporibus cupiditate quos dignissimos! Praesentium molestias provident vero quia esse recusandae magni.</div>
+        <p>Doloremque fugiat nemo ea, id praesentium illum ab soluta cumque labore nam. Itaque reprehenderit vitae aliquid debitis rerum 
+        temporibus cupiditate quos dignissimos! Praesentium molestias provident vero quia esse recusandae magni.</p>
 
-        <div>Soluta, rem reprehenderit dignissimos excepturi aut alias natus dicta, cumque, sequi, perferendis facere! Neque debitis veritatis 
+        <p>Soluta, rem reprehenderit dignissimos excepturi aut alias natus dicta, cumque, sequi, perferendis facere! Neque debitis veritatis 
+        ratione in aut, consectetur incidunt sunt cupiditate exercitationem! Perferendis nemo molestias facilis perspiciatis voluptas.</p>
 
-        <a href="" class="has-tooltip" title="Подсказка открыта">Подсказку</a> 
+        <p><a href="" class="has-tooltip" title="Подсказка открыта">Подсказку</a></p>
 
-        ratione in aut, consectetur incidunt sunt cupiditate exercitationem! Perferendis nemo molestias facilis perspiciatis voluptas.</div>
+        <p>Totam dicta esse iure repudiandae asperiores culpa accusamus facilis magnam aut nemo earum quia provident necessitatibus, nihil amet, 
+        praesentium voluptatibus animi temporibus libero dolorem quis eveniet dolore debitis nisi. Suscipit.</p>
 
-        <div>Totam dicta esse iure repudiandae asperiores culpa accusamus facilis magnam aut nemo earum quia provident necessitatibus, nihil amet, 
-        praesentium voluptatibus animi temporibus libero dolorem quis eveniet dolore debitis nisi. Suscipit.</div>
+        <p>Dolores, inventore, minima. Aut assumenda laudantium praesentium, molestiae cumque incidunt animi necessitatibus ut laboriosam. 
+        Porro cupiditate laboriosam, eum dicta ut repudiandae aliquam explicabo soluta. Quidem molestiae numquam unde accusantium quasi!</p>
 
-        <div>Dolores, inventore, minima. Aut assumenda laudantium praesentium, molestiae cumque incidunt animi necessitatibus ut laboriosam. 
-        Porro cupiditate laboriosam, eum dicta ut repudiandae aliquam explicabo soluta. Quidem molestiae numquam unde accusantium quasi!</div>
+        <p>Eveniet iusto, placeat architecto enim fugiat obcaecati, ullam perferendis in culpa commodi, provident magnam similique natus nobis. 
+        Illum, dolores, voluptate placeat laboriosam soluta cupiditate possimus, ea aspernatur quis debitis sint.</p>
 
-        <div>Eveniet iusto, placeat architecto enim fugiat obcaecati, ullam perferendis in culpa commodi, provident magnam similique natus nobis. 
-        Illum, dolores, voluptate placeat laboriosam soluta cupiditate possimus, ea aspernatur quis debitis sint.</div>
+        <p>Eligendi reiciendis doloremque veritatis rerum corporis voluptatem est expedita porro fuga quae. Nam hic asperiores consequatur odit, 
+        ea, illo vitae quis non, aperiam tenetur architecto sint, nisi iure ipsum laudantium.</p>
 
-        <div>Eligendi reiciendis doloremque veritatis rerum corporis voluptatem est expedita porro fuga quae. Nam hic asperiores consequatur odit, 
-        ea, illo vitae quis non, aperiam tenetur architecto sint, nisi iure ipsum laudantium.</div>
+        <p>Ad, repellendus doloremque. Debitis molestiae recusandae vero, quasi autem iusto mollitia deserunt odio delectus voluptatum dicta quae, 
+        tempora sint doloremque rem. Quod eum fugiat magni nostrum, dolore eligendi vel nisi.</p>
 
-        <div>Ad, repellendus doloremque. Debitis molestiae recusandae vero, quasi autem iusto mollitia deserunt odio delectus voluptatum dicta quae, 
-        tempora sint doloremque rem. Quod eum fugiat magni nostrum, dolore eligendi vel nisi.</div>
-
-        <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut aspernatur praesentium ipsum perferendis voluptas omnis ab quidem, 
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut aspernatur praesentium ipsum perferendis voluptas omnis ab quidem, 
+        corrupti corporis aperiam, architecto, doloremque sequi at nisi fugit quaerat molestiae quae consectetur!</p>
     
-        <a href="" class="has-tooltip" title="Выхода нет, скоро рассвет">Конец</a>
+        <p><a href="" class="has-tooltip" title="Выхода нет, скоро рассвет">Конец</a></p>
     
-        corrupti corporis aperiam, architecto, doloremque sequi at nisi fugit quaerat molestiae quae consectetur!</div>
-
-        <div>Modi ab asperiores est quae consectetur inventore perferendis! Voluptatibus cumque voluptate repellat, earum ad nulla et natus eligendi. 
-        Repellat ad iusto facilis dolorem recusandae, modi suscipit sapiente soluta nihil quam!</div>
-
+        <p>Modi ab asperiores est quae consectetur inventore perferendis! Voluptatibus cumque voluptate repellat, earum ad nulla et natus eligendi. 
+        Repellat ad iusto facilis dolorem recusandae, modi suscipit sapiente soluta nihil quam!</p>
       </div>
     `;
 
@@ -124,8 +120,8 @@ export default class PopoversPlay {
       this.hasTooltips[i].addEventListener('click', (event) => this.onClick(event));
     }
 
-    // событие для позиционирования подсказки при зменении ширины экрана
-    window.addEventListener('resize', () => this.positioning());
+    // -- в упрощённой версии нет нужды для позиционирования подсказки при зменении ширины экрана
+    // window.addEventListener('resize', () => this.positioning());
   }
 
   // Add listener to click
@@ -179,6 +175,28 @@ export default class PopoversPlay {
     }
   }
 
+  // позиционирование подсказки только сверху по центру
+  position() {
+    if (!this.toltipEl) { return; } // если подсказки нету, то метод остонавливается
+
+    const {
+      top,
+      left,
+      width,
+    } = this.toltipEl.getBoundingClientRect(); // координаты ссылки на подсказку
+
+    const tooltipH = this.tooltip.getBoundingClientRect().height; // высота подсказки
+    const tooltipW = this.tooltip.getBoundingClientRect().width; // ширина подсказки
+
+    const tooltipTop = window.pageYOffset + top; // растояние от начала страницы до ссылки
+
+    this.tooltip.dataset.position = 'top'; // задаёv дата атрибут для стилизации подсказки через CSS
+
+    // позиционирования подсказки через стили
+    this.tooltip.style = `left: ${(left + width / 2) - tooltipW / 2}px; top: ${tooltipTop - tooltipH}px`;
+  }
+
+  // метод для позиционирования подсказки с любой доступной стороны
   positioning() {
     if (!this.toltipEl) { return; }
     const screenW = window.innerWidth;
@@ -197,17 +215,6 @@ export default class PopoversPlay {
       height,
       width,
     } = this.toltipEl.getBoundingClientRect(); // координаты ссылки на подсказку
-
-    // console.log(`top ${top}`);
-    // console.log(`left ${left}`);
-    // console.log(`right ${right}`);
-    // console.log(`bottom ${bottom}`);
-    // console.log(`height ${height}`);
-    // console.log(`width ${width}`);
-
-    // console.log(`screenWidth ${screenW}`);
-    // console.log(`screenHeight ${screenH}`);
-    // console.log(`heightPage ${heightPage}`);
 
     // задаём через style позиционирование по условию
     if (screenW - (right + tooltipW) >= 0) {

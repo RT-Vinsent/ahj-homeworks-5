@@ -40,6 +40,12 @@ body {
   padding: 15px;
 }
 
+#taskOne .container p {
+  margin: auto;
+  display: flex;
+  justify-content: center;
+}
+
 .task {
   display: flex;
   margin: 10px;
