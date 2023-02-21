@@ -95,19 +95,28 @@ H2 {
 }
   
 .has-tooltip {
-  color: #000;
-  background: yellow;
+  position: relative;
+
+  padding: 10px 15px;
+  color: #ffffff;
+
+  font-size: 14px;
+
+  border: none;
+  border-radius: 10px;
+  background: #e43333;
   text-decoration: none;
 }
   
 .has-tooltip:hover {
-  color: red;
+  color: #000000;
 }
 
 .tooltip {
   display: block;
   position: absolute;
-  min-width: 180px;
+  height: 50px;
+  width: 100px;
   background-color: #949494;
   border: 1px solid #999;
   border-radius: 10px;
@@ -116,6 +125,7 @@ H2 {
 
 .tooltip > p {
   padding: 3px 6px;
+  font-size: 10px;
 }
 
 .tooltip > p:first-child {
@@ -126,6 +136,7 @@ H2 {
   background-color: #ffffff;
   color: #000000;
   border-radius: 0px 0px 10px 10px;
+  height: 24px;
 }
 
 [data-position='right'] {

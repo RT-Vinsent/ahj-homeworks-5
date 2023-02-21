@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 /* eslint-disable no-console */
 export default class PopoversPlay {
   constructor() {
@@ -32,7 +33,7 @@ export default class PopoversPlay {
       </H2>
       <div class="container">
 
-        <p><a href="" class="has-tooltip" title="Устройтесь на работу!">Деньги!</a></p>
+        <p><a href="" class="has-tooltip" title="50px X 100px">Click to toggle popover</a></p>
 
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi facere dolor dicta accusamus corporis itaque 
         quam deleniti, earum similique alias nostrum corrupti aspernatur, beatae, veniam vel quidem tenetur, odit reiciendis.</p>
@@ -52,7 +53,7 @@ export default class PopoversPlay {
         <p>Autem, temporibus, nihil. Debitis quasi ex minus, delectus doloremque officiis sint facere, ducimus impedit! Sit, minima, 
         et modi reiciendis sequi quo, voluptas dignissimos fugit veritatis quis nobis dolor saepe. Nobis!</p>
         
-        <p><a href="" class="has-tooltip" title="Это просто подсказка!">Подсказка</a></p>
+        <p><a href="" class="has-tooltip" title="50px X 100px">Click to toggle popover</a></p>
 
         <p>Itaque eum maxime tempora soluta, impedit placeat, dolores quod esse quibusdam saepe consequatur pariatur maiores? 
         Ex minima delectus unde sit repudiandae quidem maxime non velit aliquam temporibus nulla, magnam, laboriosam!</p>
@@ -69,7 +70,7 @@ export default class PopoversPlay {
         <p>Enim blanditiis nesciunt, repudiandae, ipsa accusantium  quos vitae magnam modi? Quia eaque natus officiis excepturi adipisci 
         optio voluptate quis ut praesentium vero. Adipisci pariatur molestias harum ullam, incidunt blanditiis officia!</p>
 
-        <p><a href="" class="has-tooltip" title="Не важный текст подсказки">Важно</a> </p>
+        <p><a href="" class="has-tooltip" title="50px X 100px">Click to toggle popover</a> </p>
 
         <p>Beatae aspernatur eveniet doloribus ullam magnam, reprehenderit odio eius, laboriosam voluptatum cupiditate voluptate officiis 
         fuga neque, inventore magni, labore assumenda porro dolores quidem. Accusantium temporibus consectetur architecto ab, a suscipit?</p>
@@ -83,7 +84,7 @@ export default class PopoversPlay {
         <p>Soluta, rem reprehenderit dignissimos excepturi aut alias natus dicta, cumque, sequi, perferendis facere! Neque debitis veritatis 
         ratione in aut, consectetur incidunt sunt cupiditate exercitationem! Perferendis nemo molestias facilis perspiciatis voluptas.</p>
 
-        <p><a href="" class="has-tooltip" title="Подсказка открыта">Подсказку</a></p>
+        <p><a href="" class="has-tooltip" title="50px X 100px">Click to toggle popover</a></p>
 
         <p>Totam dicta esse iure repudiandae asperiores culpa accusamus facilis magnam aut nemo earum quia provident necessitatibus, nihil amet, 
         praesentium voluptatibus animi temporibus libero dolorem quis eveniet dolore debitis nisi. Suscipit.</p>
@@ -103,7 +104,7 @@ export default class PopoversPlay {
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut aspernatur praesentium ipsum perferendis voluptas omnis ab quidem, 
         corrupti corporis aperiam, architecto, doloremque sequi at nisi fugit quaerat molestiae quae consectetur!</p>
     
-        <p><a href="" class="has-tooltip" title="Выхода нет, скоро рассвет">Конец</a></p>
+        <p><a href="" class="has-tooltip" title="50px X 100px">Click to toggle popover</a></p>
     
         <p>Modi ab asperiores est quae consectetur inventore perferendis! Voluptatibus cumque voluptate repellat, earum ad nulla et natus eligendi. 
         Repellat ad iusto facilis dolorem recusandae, modi suscipit sapiente soluta nihil quam!</p>
@@ -119,9 +120,6 @@ export default class PopoversPlay {
     for (let i = 0; i < this.hasTooltips.length; i += 1) {
       this.hasTooltips[i].addEventListener('click', (event) => this.onClick(event));
     }
-
-    // -- в упрощённой версии нет нужды для позиционирования подсказки при зменении ширины экрана
-    // window.addEventListener('resize', () => this.positioning());
   }
 
   // Add listener to click
@@ -175,67 +173,74 @@ export default class PopoversPlay {
     }
   }
 
-  // позиционирование подсказки только сверху по центру
   position() {
-    if (!this.toltipEl) { return; } // если подсказки нету, то метод остонавливается
+    // если подсказки нету, то метод остонавливается
+    if (!this.toltipEl) { return; }
 
-    const {
-      top,
-      left,
-      width,
-    } = this.toltipEl.getBoundingClientRect(); // координаты ссылки на подсказку
+    // атрибут для добавления стрелочки к подсказке
+    this.tooltip.dataset.position = 'top';
 
-    const tooltipH = this.tooltip.getBoundingClientRect().height; // высота подсказки
-    const tooltipW = this.tooltip.getBoundingClientRect().width; // ширина подсказки
+    // высота и ширина подсказки
+    const { height, width } = this.tooltip.getBoundingClientRect();
+    // ширина кнопки
+    const widthBtn = this.toltipEl.getBoundingClientRect().width;
 
-    const tooltipTop = window.pageYOffset + top; // растояние от начала страницы до ссылки
+    /*
+    /  Что бы центрировать подсказку по горизонтали,
+    /  от центра кнопки надо отнять половину ширины подсказки.
+    */
+    const toltipLeft = widthBtn / 2 - width / 2;
 
-    this.tooltip.dataset.position = 'top'; // задаёv дата атрибут для стилизации подсказки через CSS
+    /*
+    / Что бы центрировать подсказку по вертикали,
+    / от нуля нужно отнять высоту подсказки.
+    */
+    const toltipTop = 0 - height;
 
     // позиционирования подсказки через стили
-    this.tooltip.style = `left: ${(left + width / 2) - tooltipW / 2}px; top: ${tooltipTop - tooltipH}px`;
+    this.tooltip.style = `left: ${toltipLeft}px; top: ${toltipTop}px`;
   }
 
-  // метод для позиционирования подсказки с любой доступной стороны
-  positioning() {
-    if (!this.toltipEl) { return; }
-    const screenW = window.innerWidth;
-    const screenH = window.innerHeight;
+  // метод для позиционирования подсказки с любой доступной стороны отнсоительно страницы
+  // positioning() {
+  //   if (!this.toltipEl) { return; }
+  //   const screenW = window.innerWidth;
+  //   const screenH = window.innerHeight;
 
-    const tooltipH = this.tooltip.getBoundingClientRect().height; // находим высоту подсказки
-    const tooltipW = this.tooltip.getBoundingClientRect().width; // находим ширину подсказки
+  //   const tooltipH = this.tooltip.getBoundingClientRect().height; // находим высоту подсказки
+  //   const tooltipW = this.tooltip.getBoundingClientRect().width; // находим ширину подсказки
 
-    const heightPage = window.pageYOffset; // растояние от начала страницы
+  //   const heightPage = window.pageYOffset; // растояние от начала страницы
 
-    const {
-      top,
-      left,
-      right,
-      bottom,
-      height,
-      width,
-    } = this.toltipEl.getBoundingClientRect(); // координаты ссылки на подсказку
+  //   const {
+  //     top,
+  //     left,
+  //     right,
+  //     bottom,
+  //     height,
+  //     width,
+  //   } = this.toltipEl.getBoundingClientRect(); // координаты ссылки на подсказку
 
-    // задаём через style позиционирование по условию
-    if (screenW - (right + tooltipW) >= 0) {
-      // справа
-      this.tooltip.dataset.position = 'right';
-      this.tooltip.style = `left: ${right}px; top: ${top + heightPage - ((tooltipH - height) / 2)}px`;
-    // eslint-disable-next-line max-len
-    } else if (screenH - (bottom + tooltipH) >= 0 && tooltipW <= screenW && (screenW - left) >= tooltipW) {
-      // снизу
-      this.tooltip.dataset.position = 'bottom';
-      this.tooltip.style = `left: ${(left + width / 2) - tooltipW / 2}px; top: ${heightPage + bottom}px`;
-    } else if (left - tooltipW >= 0) {
-      // слева
-      this.tooltip.dataset.position = 'left';
-      this.tooltip.style = `left: ${left - tooltipW}px; top: ${top + heightPage - ((tooltipH - height) / 2)}px`;
-    } else if (top - tooltipH >= 0) {
-      // сверху
-      this.tooltip.dataset.position = 'top';
-      this.tooltip.style = `left: ${(left + width / 2) - tooltipW / 2}px; top: ${top + heightPage - tooltipH}px`;
-    }
-  }
+  //   // задаём через style позиционирование по условию
+  //   if (screenW - (right + tooltipW) >= 0) {
+  //     // справа
+  //     this.tooltip.dataset.position = 'right';
+  //     this.tooltip.style = `left: ${right}px; top: ${top + heightPage - ((tooltipH - height) / 2)}px`;
+  //   // eslint-disable-next-line max-len
+  //   } else if (screenH - (bottom + tooltipH) >= 0 && tooltipW <= screenW && (screenW - left) >= tooltipW) {
+  //     // снизу
+  //     this.tooltip.dataset.position = 'bottom';
+  //     this.tooltip.style = `left: ${(left + width / 2) - tooltipW / 2}px; top: ${heightPage + bottom}px`;
+  //   } else if (left - tooltipW >= 0) {
+  //     // слева
+  //     this.tooltip.dataset.position = 'left';
+  //     this.tooltip.style = `left: ${left - tooltipW}px; top: ${top + heightPage - ((tooltipH - height) / 2)}px`;
+  //   } else if (top - tooltipH >= 0) {
+  //     // сверху
+  //     this.tooltip.dataset.position = 'top';
+  //     this.tooltip.style = `left: ${(left + width / 2) - tooltipW / 2}px; top: ${top + heightPage - tooltipH}px`;
+  //   }
+  // }
 
   clearHTML() { // очищаем container в DOM
     this.container.classList.remove('task');

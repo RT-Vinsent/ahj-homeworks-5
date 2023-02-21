@@ -11,7 +11,6 @@ export default class Popovers {
   onClick(textEL) {
     this.popoversPlay.delTooltip(); // удаляет старую подсказку
     this.popoversPlay.addTooltip(textEL); // добавляет новую подсказку
-    // this.popoversPlay.positioning(); // позиционирует подсказку c любой стороны
-    this.popoversPlay.position(); // позиционирует подсказку только сверху
+    this.popoversPlay.position(); // позиционирует подсказку относительно кнопки
   }
 }
